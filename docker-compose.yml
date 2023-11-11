@@ -10,5 +10,6 @@ services:
       NODE_ENV: development
     ports:
       - 5173:5173
+      - 6006:6006
     volumes:
       - .:/app
