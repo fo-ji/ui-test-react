@@ -1,4 +1,4 @@
-import { within } from "@testing-library/react";
+import { within } from "@storybook/testing-library";
 import Form from "./Form";
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect } from "@storybook/jest";
@@ -22,9 +22,9 @@ export const Testing: Story = {
     // testing-lib の screen のようなもの
     const canvas = within(canvasElement);
     const input = canvas.getByRole("textbox");
-    expect(input).toHaveTextContent("");
+    await expect(input).toHaveTextContent("");
 
     await userEvent.type(input, "play function");
-    expect(canvas.getByDisplayValue("play function")).toBeInTheDocument();
+    await expect(canvas.getByDisplayValue("play function")).toBeInTheDocument();
   },
 };
